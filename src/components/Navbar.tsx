@@ -27,11 +27,6 @@ export default async function TopMenu(){
                     book
                   </Link>
             </div>
-            <div className="text-base hover:text-white">
-                  <Link href="/booking" color="inherit" underline="none">
-                    contact 
-                  </Link>
-            </div>
 
             { 
             session? 
