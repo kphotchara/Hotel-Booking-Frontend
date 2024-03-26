@@ -28,7 +28,8 @@ export default function Register(){
     return(
         <div className="flex flex-col justify-center w-[60%] mx-[20%] bg-white rounded-3xl">
             <div className="text-4xl font-semibold flex justify-center my-[3%] mt-[10%]">Sign-up</div>
-            <TextField className="my-[2vh] w-[70%] mx-[15%]" id="username" label="Username" name="username" 
+            <div className="my-[2vh] w-[70%] mx-[15%]">
+            <TextField  id="username" label="Username" name="username" 
             sx={{
                 "& .MuiInputBase-root":{
                     height: 70
@@ -46,6 +47,8 @@ export default function Register(){
 
             }}
             variant="outlined" required onChange={(e)=>{setUsername(e.target.value)}}/>
+            </div>
+            <div className="my-[2vh] w-[70%] mx-[15%]">
             <TextField className="my-[2vh] w-[70%] mx-[15%]" id="name" label="Name" name="name" 
             sx={{
                 "& .MuiInputBase-root":{
@@ -64,6 +67,8 @@ export default function Register(){
 
             }}
             variant="outlined" required onChange={(e)=>{setName(e.target.value)}}/>
+            </div>
+            <div className="my-[2vh] w-[70%] mx-[15%]">
             <TextField className="my-[2vh] w-[70%] mx-[15%]" id="tel" label="Telephone Number" name="tel"
             sx={{
                 "& .MuiInputBase-root":{
@@ -81,7 +86,10 @@ export default function Register(){
                   },
 
             }}
+            
             variant="outlined" required onChange={(e)=>{setTel(e.target.value)}}/>
+            </div>
+            <div className="my-[2vh] w-[70%] mx-[15%]">
             <TextField className="my-[2vh] w-[70%] mx-[15%]" id="email" label="Email" name="email"
             sx={{
                 "& .MuiInputBase-root":{
@@ -100,6 +108,8 @@ export default function Register(){
 
             }}
             variant="outlined" required onChange={(e)=>{setEmail(e.target.value)}}/>
+            </div>
+            <div className="my-[2vh] w-[70%] mx-[15%]">
             <TextField className="my-[2vh] w-[70%] mx-[15%]" id="password" label="Password" name="password"
             sx={{
                 "& .MuiInputBase-root":{
@@ -117,7 +127,10 @@ export default function Register(){
                   },
 
             }}
+            
             variant="outlined" required onChange={(e)=>{setPassword(e.target.value)}}/>
+            </div>
+            <div className="my-[2vh] w-[70%] mx-[15%]">
             <FormControl required className="my-[2vh] w-[70%] mx-[15%]" 
             sx={{
                 "& .MuiInputBase-root":{
@@ -150,6 +163,7 @@ export default function Register(){
                 <MenuItem value="admin">admin</MenuItem>
                 </Select>
             </FormControl>
+            </div>
             <div className="mx-[15%] mt-4">Already have an account ? 
             <Link href="/api/auth/signin" color="inherit" className="underline hover:text-[#000000] hover:font-semibold mx-2">
                      Sign-in
