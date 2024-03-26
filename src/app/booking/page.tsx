@@ -1,4 +1,4 @@
-/*import DateReserve from "@/components/DateReserve";
+//import DateReserve from "@/components/DateReserve";
 import { TextField } from "@mui/material";
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
@@ -49,9 +49,8 @@ export default async function Booking(){
                 </FormControl>
             </Box>
 
-           <DateReserve/>
-            
+          
         <button className='border border-solid border-grey shadow-lg w-[120px] h-[40px] m-1 rounded-lg hover:bg-green-100' name="Book Vaccine">Book Vaccine</button>
         </main>
     );
-}*/
+}
