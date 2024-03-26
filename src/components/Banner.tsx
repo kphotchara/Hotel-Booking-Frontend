@@ -1,7 +1,9 @@
+'use client'
+
 import Image from 'next/image';
 
-export default function Banner(){
-    
+export default async function Banner(){
+
     return (
         <div className="block w-screen h-[calc(100svh-50px)]">
             <Image src='/img/homeBanner.jpg' 
