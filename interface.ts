@@ -9,6 +9,7 @@ interface HotelItem {
     rating:number,
     __v: number,
     image:string,
+    price:number,
     review:ReviewItem[]
   }
   
