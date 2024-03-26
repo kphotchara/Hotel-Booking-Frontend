@@ -29,7 +29,7 @@ export default function Register(){
         <div className="flex flex-col justify-center w-[60%] mx-[20%] bg-white rounded-3xl">
             <div className="text-4xl font-semibold flex justify-center my-[3%] mt-[10%]">Sign-up</div>
             <div className="my-[2vh] w-[70%] mx-[15%]">
-            <TextField  id="username" label="Username" name="username" 
+            <TextField className="my-[2vh] w-[70%] mx-[15%]" id="username" label="Username" name="username" 
             sx={{
                 "& .MuiInputBase-root":{
                     height: 70
