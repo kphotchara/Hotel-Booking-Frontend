@@ -3,7 +3,7 @@ import getHotel from "@/libs/getHotel"
 import ReviewCard from "@/components/ReviewCard"
 import { Rating } from "@mui/material"
 import { Link } from '@mui/material';
-
+import { ReviewItem } from "../../../../../interface";
 export default async function HotelDetailPage({params}:{params:{hid:string}}){
     const hotelDetail = await getHotel(params.hid)
     
@@ -25,7 +25,8 @@ export default async function HotelDetailPage({params}:{params:{hid:string}}){
                 <div className="text-base m-5">postalcode : {hotelDetail.data.postalcode}</div>
                 <div className="text-base m-5">tel : {hotelDetail.data.tel}</div>
                 <div className='flex items-center text-base text-[#434952] bg-[#8D9CA4] m-5 px-5 h-[45px] w-[120px] rounded drop-shadow hover:scale-110 transition duration-150'>
-                <Link href={`/hotel/${params.hid}/booking`} color="inherit" underline="none">Book Now</Link>
+                <Link href={`/booking?id=?${params.hid}&hotel=${hotelDetail.data.name}`} color="inherit" underline="none">Book Now</Link>
+                {/* /hotel/${params.hid}/booking?hotel=${hotelDetail.data.name} */}
                 </div>
             </div>
             </div>
