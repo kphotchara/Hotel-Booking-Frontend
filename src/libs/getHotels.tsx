@@ -1,3 +1,4 @@
+import { HotelJson } from "../../interface"
 export default async function getHotels(page:number){
     
     const response = await fetch(`${process.env.BACK_END_URL}/api/v1/hotels?limit=10&page=${page}`)

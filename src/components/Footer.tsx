@@ -24,10 +24,10 @@ export default function Footer(){
 							Photchara Kallayanasiri 6633158821
 						</li>
 						<li className="text-md pb-2 font-semibold">
-                            Photchara Kallayanasiri 6633158821
+                            Kawinwat Phithukwonglerd 6633010521
 						</li>
 						<li className="text-md pb-2 font-semibold">
-                            Photchara Kallayanasiri 6633158821
+							Wasapa Rungruthaiwat 6633223921
 						</li>
 						
 					</ul>

@@ -12,17 +12,24 @@ interface HotelItem {
     review:ReviewItem[]
   }
   
-  interface ReviewItem {
+  export interface ReviewItem {
     rating: number,
     description:string
   }
 
-  interface HotelJson {
+  export interface HotelJson {
     success: boolean,
     count: number,
     pagination: Object,
     data: HotelItem[]
   }
 
+  export interface BookingItem {
+    // name: string;
+    // surname : string;
+    id: string;
+    hotel: String;
+    bookDate : string;
+  }
 
   

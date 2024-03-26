@@ -1,9 +1,11 @@
 export default function BookingLayout(
-    {children}:{children:React.ReactNode}
+    {children, bookInfo, userInfo}:{children:React.ReactNode, bookInfo: React.ReactNode ,userInfo: React.ReactNode }
 ){
     return (
-        <div className="flex flex-col">
-            {children}       
+        <div className="flex flex-col ml-10 ">
+            {children}    
+            {userInfo} 
+            {bookInfo}  
         </div>
     )
 }
