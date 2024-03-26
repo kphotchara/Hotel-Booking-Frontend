@@ -4,7 +4,7 @@ import ReviewCard from "@/components/ReviewCard"
 import { Rating } from "@mui/material"
 import RatingWithSSR from "@/components/RatingWithSSR"
 import { Link } from '@mui/material';
-import { ReviewItem } from "../../../../../interface"
+import { ReviewItem } from "../../../../interface"
 
 
 
