@@ -1,5 +1,5 @@
-import NextAuth from "next-auth/next";
-import nextAuth, { AuthOptions } from "next-auth";
+
+import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import userLogIn from "@/libs/userLogIn";
 
@@ -13,12 +13,13 @@ export const authOptions:AuthOptions = {
           // e.g. domain, username, password, 2FA token, etc.
           // You can pass any HTML attribute to the <input> tag through the object.
           credentials: {
-            email: { label: "Email", type: "email", placeholder: "email" },
+            username: { label: "Username", type: "text", placeholder: "username" },
             password: { label: "Password", type: "password" }
           },
           async authorize(credentials, req) {
             if(!credentials)return null
-            const user = await userLogIn(credentials.email,credentials.password) 
+            
+            const user = await userLogIn(credentials.username,credentials.password) 
 
             if (user) {
               // Any object returned will be saved in `user` property of the JWT
@@ -44,5 +45,5 @@ export const authOptions:AuthOptions = {
     }
 }
 
-const handler = nextAuth(authOptions)
+const handler = NextAuth(authOptions)
 export {handler as GET , handler as POST}

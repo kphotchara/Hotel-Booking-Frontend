@@ -12,9 +12,15 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+<<<<<<< HEAD
     "@mui/material": "^5.15.11",
     "@mui/x-date-pickers": "^6.19.6",
     "@reduxjs/toolkit": "^1.9.7",
+=======
+    "@mui/material": "^5.15.14",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@mui/x-date-pickers": "^6.19.8",
+>>>>>>> 8ddff8dd7a9a60d5b4111c00806fed34e9205688
     "@types/node": "20.11.21",
     "@types/react": "18.2.60",
     "@types/react-dom": "18.2.19",
@@ -23,8 +29,12 @@
     "next-auth": "^4.23.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+<<<<<<< HEAD
     "react-redux": "^8.1.3",
     "redux-persist": "^6.0.0",
+=======
+    "styled-components": "^6.1.8",
+>>>>>>> 8ddff8dd7a9a60d5b4111c00806fed34e9205688
     "typescript": "5.3.3"
   },
   "devDependencies": {
