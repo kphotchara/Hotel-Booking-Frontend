@@ -1,4 +1,4 @@
-interface HotelItem {
+export interface HotelItem {
     _id: string,
     name: string,
     address: string,
