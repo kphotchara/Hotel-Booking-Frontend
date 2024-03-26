@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Card from "./Card"
-import { HotelJson } from "@/interface"
+import { HotelJson, HotelItem } from "@/interface"
 
 
 export default async function HotelCatalog({hotelsJson}:{hotelsJson:Promise<HotelJson>}){
