@@ -49,7 +49,7 @@ export default async function Booking(){
                 </FormControl>
             </Box>
 
-            <DateReserve/>
+           <DateReserve/>
             
         <button className='border border-solid border-grey shadow-lg w-[120px] h-[40px] m-1 rounded-lg hover:bg-green-100' name="Book Vaccine">Book Vaccine</button>
         </main>
