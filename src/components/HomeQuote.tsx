@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Link } from "@mui/material"
 
 export default function HomeQuote(){
     return(
@@ -13,7 +14,14 @@ export default function HomeQuote(){
                 objectFit="cover"
                 className="w-full h-full border border-[#434952]"
                 /></div>
-            <div className="w-1/2 text-[#434952] text-right flex h-[400px] items-center pr-4 text-4xl font-semibold font-Montserrat">Your dream holidays <br/> Start here!</div>
+            <div className="w-1/2 text-[#434952] grid justify-items-end py-16 text-right h-[400px]  pr-4 text-4xl font-semibold font-Montserrat">
+            <div>Your dream holidays </div>
+            <div className="py-10">Start here!</div>
+            <div className="text-xl bg-[#434952] w-[105px] text-white self-center text-center font-normal rounded-md hover:scale-110 transition duration-150">
+                <Link href='/hotel' color="inherit" underline="none">view all</Link>
+            </div>
+            </div>
+            
             </div>
         </div>
     )
