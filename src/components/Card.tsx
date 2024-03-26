@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import InteractiveCard from './InteractiveCard';
 import Rating from '@mui/material/Rating';
+import RatingWithSSR from './RatingWithSSR';
 import React from 'react';
 
 
@@ -18,7 +19,7 @@ export default function Card({hotelName , imgSrc ,district,province, rating,pric
             <div className='w-1/2 h-full py-6 px-5 font-Poppins flex flex-col space-y-4 text-black'>
                 <div className='text-2xl font-semibold '>{hotelName}</div>
                 <div className='text-[#434952]'>{district} , {province}</div>
-                <Rating value={rating} readOnly/>
+                <RatingWithSSR value={rating} readOnly={true} className='m-10'/>
                 <div>$ {price} per night</div>
 
             </div>
