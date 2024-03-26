@@ -1,4 +1,4 @@
-import { HotelJson } from "../../interface"
+import { HotelJson } from "../interface"
 export default async function getHotels(){
 
     
