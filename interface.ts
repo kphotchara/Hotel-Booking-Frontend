@@ -8,7 +8,7 @@ interface HotelItem {
     tel: string,
     rating:number,
     __v: number,
-    image:string
+    image:string,
     review:ReviewItem[]
   }
   

@@ -2,15 +2,16 @@ import Image from "next/image"
 import getHotel from "@/libs/getHotel"
 import ReviewCard from "@/components/ReviewCard"
 import { Rating } from "@mui/material"
+import RatingWithSSR from "@/components/RatingWithSSR"
 import { Link } from '@mui/material';
+
 
 export default async function HotelDetailPage({params}:{params:{hid:string}}){
     const hotelDetail = await getHotel(params.hid)
     
-    
-
     return (
         <main className="min-h-screen text-center bg-white text-black">
+            
             <div className="flex flex-row py-16 justify-center items-center">
             <Image src={hotelDetail.data.image?hotelDetail.data.image:'/img/no-image.jpg'} 
                 alt='hotel Image'
@@ -18,7 +19,7 @@ export default async function HotelDetailPage({params}:{params:{hid:string}}){
                 className='object-cover rounded-lg w-[30%]'/>
             <div className="text-lg mx-16 my-5 text-left font-Poppins">
                 <div className="text-xl font-semibold m-5">{hotelDetail.data.name}</div>
-                <Rating value={hotelDetail.data.rating} readOnly className="mx-5"/>
+                <RatingWithSSR value={hotelDetail.data.rating} readOnly={true} className="mx-5"/>
                 <div className="text-base m-5">address : {hotelDetail.data.address}</div>
                 <div className="text-base m-5">district : {hotelDetail.data.district}</div>
                 <div className="text-base m-5">province : {hotelDetail.data.province}</div>
@@ -37,7 +38,8 @@ export default async function HotelDetailPage({params}:{params:{hid:string}}){
                 <div className="relative justify-start w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-14">
                 {
                     hotelDetail.data.review.map((reviewItem:ReviewItem)=>(
-                        <ReviewCard text={reviewItem.description} rating={reviewItem.rating}/>
+                        <div key={reviewItem.description}><ReviewCard text={reviewItem.description} rating={reviewItem.rating}/></div>
+                        
                     ))
                 }  
                 </div>
