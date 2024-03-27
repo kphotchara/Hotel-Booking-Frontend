@@ -8,7 +8,7 @@ import addOneBooking from "@/libs/addOneBooking";
 import deleteBooking from "@/libs/deleteBooking"
 import DateReserve from "@/components/DateReserve";
 import { useSession } from "next-auth/react";
-import dayjs, {Dayjs} from "dayjs";
+import dayjs from "dayjs";
 import { useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { BookingItem } from "@/interface"
@@ -43,7 +43,7 @@ export default function BookingList ({bookItem}:{bookItem:BookingItem}) {
         
         <div className="bg-gray-200 rounded space-y-4 rounded-2xl mx-auto px-11 mx-5 py-12 my-10 w-2/5 relative" key={bookItem._id}>
             <div className="text-md ml-4"> Hotel : {bookItem.hotel.name}</div>
-            <div className="text-md ml-4"> Booking Date : {bookItem.apptDate}</div>
+            <div className="text-md ml-4"> Booking Date : {dayjs(bookItem.apptDate).format("DD/MM/YYYY")}</div>
             <button className="block rounded-2xl bg-black hover:bg-indigo-600 px-5 py-2 text-white text-sm shadow-sm absolute right-32 bottom-4"
             onClick={(event)=>{event.stopPropagation();router.push(`/mybooking/${bookItem._id}`)}}>
                 edit
