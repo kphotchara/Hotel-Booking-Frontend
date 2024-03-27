@@ -1,4 +1,4 @@
-export default async function deleteBooking(token:string, bid?:string) {
+export default async function deleteBooking(token:string, bid:string) {
     const response = await fetch(`https://hotel-booking-backend-git-main-kawinwats-projects.vercel.app/api/v1/booking/${bid}`,{
         method: "DELETE",
         headers: {

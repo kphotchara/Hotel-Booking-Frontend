@@ -5,7 +5,8 @@ export default async function getBookings(token:string){
         headers: {
             authorization:`Bearer ${token}`,
         },
-    })
+        cache: 'no-store'
+    },)
     if(!response.ok){
         throw new Error("Failed to fetch get booking")
     }
