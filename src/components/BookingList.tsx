@@ -26,7 +26,7 @@ export default function BookingList ({bookItem}:{bookItem:BookingItem}) {
     const handleRemoveBooking = async (bookingId: string) => {
         try {
             if (session && session.user && session.user.token) {
-                deleteBooking(session.user.token, bookingId);
+                await deleteBooking(session.user.token, bookingId);
                 alert("Delete your booking successfully !! ");
                 window.location.reload();
             } else {
