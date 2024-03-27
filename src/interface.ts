@@ -25,10 +25,26 @@ export interface HotelItem {
     data: HotelItem[]
   }
 
-  export interface BookingItem {
-    apptDate: string,
-    hotel:string,
-    _id:string,
+  export interface HotelinBooking {
+    _id : string,
+    name : string,
+    tel : string
   }
+
+  export interface BookingItem {
+    _id:string,
+    apptDate: string,
+    user:string,
+    hotel:HotelinBooking,
+    createdAt:string,
+    __v: number
+  }
+
+  export interface BookingJson {
+    success: boolean,
+    count: number,
+    data: BookingItem[]
+  }
+
 
   

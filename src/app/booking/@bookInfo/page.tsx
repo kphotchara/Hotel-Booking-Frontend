@@ -28,13 +28,13 @@ export default function bookInfo(){
     
   const makeBooking = () => {
     if(hid && hName && bookDate && session) {
-      const item : BookingItem = {
-        // name: name,
-        _id:hid,
-        hotel:hName ,
-        apptDate:dayjs(bookDate).format("YYYY/MM/DD")
-      }
-      dispatch(addBooking(item));
+      // const item : BookingItem = {
+      //   // name: name,
+      //   _id:hid,
+      //   hotel:hName ,
+      //   apptDate:dayjs(bookDate).format("YYYY/MM/DD")
+      // }
+      //dispatch(addBooking(item));
       addOneBooking(session.user.token,dayjs(bookDate).format("YYYY/MM/DD"),hid)
       alert("Booking Successfully")
     }
