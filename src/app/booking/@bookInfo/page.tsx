@@ -6,9 +6,12 @@ import dayjs, {Dayjs} from "dayjs";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from '@/redux/store';
 import { addBooking } from "@/redux/features/bookSlice";
-import { BookingItem } from "../../../interface";
+import { BookingItem } from "@/interface";
 import { useSearchParams } from "next/navigation";
 import DateReserve from "@/components/DateReserve";
+import { useSession } from "next-auth/react";
+import addOneBooking from "@/libs/addOneBooking";
+import getUserProfile from "@/libs/getUserProfile";
 
 export default function bookInfo(){
     const urlParams = useSearchParams()
@@ -17,28 +20,39 @@ export default function bookInfo(){
     // const [hotel,setHotel] = useState("")
     const [bookDate, setBookDate] = useState <Dayjs|null>(null)
     const dispatch = useDispatch<AppDispatch>()
-    const hotel = urlParams.get('hotel')
-    const id = urlParams.get('id')
+    const hName = urlParams.get('hotel')
+    const hid = urlParams.get('id')
     const router = useRouter()
-
+    const {data:session} =useSession();
+    
     
   const makeBooking = () => {
-    if(id && hotel && bookDate) {
-      const item:BookingItem = {
+    if(hid && hName && bookDate && session) {
+      const item : BookingItem = {
         // name: name,
-        id: id,
-        hotel :hotel ,
-        bookDate : dayjs(bookDate).format("YYYY/MM/DD")
+        _id:hid,
+        hotel:hName ,
+        apptDate:dayjs(bookDate).format("YYYY/MM/DD")
       }
-      dispatch(addBooking(item))
-      
+      dispatch(addBooking(item));
+      addOneBooking(session.user.token,dayjs(bookDate).format("YYYY/MM/DD"),hid)
+      alert("Booking Successfully")
+    }
+    else if(!bookDate){
+      alert("Please select date")
     }
   }
     return(
-        <main><button className='border border-solid border-gray shadow-lg w-[200px] h-[40px] m-1 my-3 rounded-lg hover:bg-green-100'
-         name="Your Booking Detail" onClick={(e)=>{e.stopPropagation(); router.push('/mybooking')}}>Your Booking Detail</button>
+        <main>
         {/* <div></div> */}
-        <div className='text-xl tracking-widest p-[10px]'>Hotel Booking</div>
+        <div className="text-[#434952] font-Montserrat font-bold text-xl m-4" >Hotel Booking</div>
+        <div className="text-[#434952] font-Montserrat  text-xl m-4" >Hotel : {hName}</div>
+        <div className="text-[#434952] font-Montserrat  text-xl m-4" >
+          {
+            bookDate? dayjs(bookDate).format("YYYY/MM/DD")
+            : "Please select date"
+          }
+        </div>
         {/* <div className="px-2"><TextField id="Name-Lastname" label="Name-Lastname" variant="standard" name="Name-Lastname"
          value={citizenName} onChange={ (e)=> {setcitizenName(e.target.value); onNameChange(e.target.value);}}/>/></div>
         <div className="px-2"><TextField id="Citizen ID" label="Citizen ID" variant="standard" name="Name-Lastname"
@@ -66,8 +80,11 @@ export default function bookInfo(){
             onDateChange={(value:Dayjs) => {setBookDate(value)}}/>
            
           </div>
-        <button className='border border-solid border-grey shadow-lg w-[120px] h-[40px] m-1 rounded-lg 
-        hover:bg-green-100' name="Book Vaccine" onClick={makeBooking} >Book Hotel</button></main>
+        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[20%]  shadow-lg mx-[1%] my-2 font-bold"
+         name="Book Vaccine" onClick={makeBooking} >Book Hotel</button>
+        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[25%]  shadow-lg mx-[3%] my-2 font-bold"
+         name="Your Booking Detail" onClick={(e)=>{e.stopPropagation(); router.push('/mybooking')}}>Your Booking Detail</button>
+        </main>
     )
 }
 
