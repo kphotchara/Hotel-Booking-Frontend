@@ -23,8 +23,8 @@ export default async function TopMenu(){
                   </Link>
             </div>
             <div className="text-base hover:text-white">
-                  <Link href="/booking" color="inherit" underline="none">
-                    book
+                  <Link href="/mybooking" color="inherit" underline="none">
+                    Your booking
                   </Link>
             </div>
 
