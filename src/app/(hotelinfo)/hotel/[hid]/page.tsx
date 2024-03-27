@@ -29,7 +29,7 @@ export default async function HotelDetailPage({params}:{params:{hid:string}}){
                 <div className="text-base m-5">tel : {hotelDetail.data.tel}</div>
                 <div className="text-lg m-5 font-medium">$ {hotelDetail.data.price} per night</div>
                 <div className='flex items-center text-base text-[#434952] bg-[#8D9CA4] m-5 px-5 h-[45px] w-[120px] rounded drop-shadow hover:scale-110 transition duration-150'>
-                <Link href={`/booking?id=?${params.hid}&hotel=${hotelDetail.data.name}`} color="inherit" underline="none">Book Now</Link>
+                <Link href={`/booking?id=${params.hid}&hotel=${hotelDetail.data.name}`} color="inherit" underline="none">Book Now</Link>
                 {/* /hotel/${params.hid}/booking?hotel=${hotelDetail.data.name} */}
                 </div>
             </div>

@@ -26,11 +26,9 @@ export interface HotelItem {
   }
 
   export interface BookingItem {
-    // name: string;
-    // surname : string;
-    id: string;
-    hotel: String;
-    bookDate : string;
+    apptDate: string,
+    hotel:string,
+    _id:string,
   }
 
   

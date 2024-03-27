@@ -20,13 +20,13 @@ export default function BookingList () {
                 
                 <div className="text-sm ml-48"> Citizen ID : {bookItem.id}</div> */}
                 <div className="text-md ml-4"> Hotel : {bookItem.hotel}</div>
-                <div className="text-md ml-4"> Booking Date : {bookItem.bookDate}</div>
+                <div className="text-md ml-4"> Booking Date : {bookItem.apptDate}</div>
                 <button className="block rounded-2xl bg-black hover:bg-indigo-600 px-5 py-2
-                text-white text-sm shadow-sm absolute right-32 bottom-4" onClick={(e)=>{e.stopPropagation(); router.push(`/booking?id=?${bookItem.id}&hotel=${bookItem.hotel}`)}}>
+                text-white text-sm shadow-sm absolute right-32 bottom-4" onClick={(e)=>{e.stopPropagation(); router.push(`/booking?id=?${bookItem._id}&hotel=${bookItem.hotel}`)}}>
                     edit
                 </button>
                 <button className="block rounded-2xl bg-black hover:bg-indigo-600 px-5 py-2
-                text-white text-sm shadow-sm absolute right-4 bottom-4" onClick = {() => dispatch(removeBooking(bookItem.id))}>
+                text-white text-sm shadow-sm absolute right-4 bottom-4" onClick = {() => dispatch(removeBooking(bookItem._id))}>
                     Remove
                 </button>
                 </div>
