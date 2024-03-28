@@ -45,11 +45,11 @@ export default function bookInfo(){
     }
   }
     return(
-        <main className="ml-[6%]">
+        <main className="px-12">
         {/* <div></div> */}
-        <div className="text-[#434952] font-Montserrat font-bold text-3xl my-[4%]" >Hotel Booking</div>
+        <div className="text-[#434952] font-Montserrat font-bold text-2xl mx-4 my-5 " >Hotel Booking</div>
         <div className="text-[#434952] font-Montserrat  text-xl m-4" >Hotel : {hName}</div>
-        <div className="text-[#434952] font-Montserrat  text-xl m-4" >
+        <div className="text-[#434952] font-Montserrat  text-xl mx-4 my-6" >
           {
             bookDate? dayjs(bookDate).format("YYYY/MM/DD")
             : "Please select date"
@@ -82,9 +82,9 @@ export default function bookInfo(){
             onDateChange={(value:Dayjs) => {setBookDate(value)}}/>
            
           </div>
-        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[20%]  shadow-lg mx-[1%] mt-[4%] font-bold mb-[10%]"
+        <button className="font-Montserrat inline rounded bg-[#C3CACE] hover:scale-110 transition duration-150 px-3 py-3 my-5 text-[#434952] shadow-lg font-medium"
          name="Book Vaccine" onClick={makeBooking} >Book Hotel</button>
-        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[25%]  shadow-lg mx-[3%] mt-[4%] font-bold mb-[10%]"
+        <button className="font-Montserrat inline rounded bg-[#C3CACE] hover:scale-110 transition duration-150 px-3 py-3 my-5 text-[#434952] shadow-lg mx-5 font-medium"
          name="Your Booking Detail" onClick={(e)=>{e.stopPropagation(); router.push('/mybooking')}}>Your Booking Detail</button>
         </main>
     )

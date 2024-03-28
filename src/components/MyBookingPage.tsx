@@ -24,10 +24,21 @@ export default async function MyBookingPage({bookingJson,role}:{bookingJson:Prom
                     </div>
                     </>
         
-                :
+                :   
+                <div>
+                   {
                     bookingItems.map((bookItem:BookingItem)=>(
-                    <div key={bookItem._id}><BookingList bookItem={bookItem} role={role}/></div>
-                    ))
+                        <div key={bookItem._id}><BookingList bookItem={bookItem} role={role}/></div>
+                        ))
+                   }
+                   <div className="text-base pb-10 flex justify-center hover:text-[#C3CACE] font-Montserrat">
+                            <Link href="/hotel" color="inherit">
+                            add another booking
+                            </Link>
+                    </div>
+                </div>
+                    
+                    
             }
         </>
     )

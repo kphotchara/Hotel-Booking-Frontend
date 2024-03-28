@@ -13,7 +13,7 @@ export default async function Session({ params }: { params: { bookid: string } }
     }
 
   return (
-    <main>
+    <main className='bg-white'>
       
       <BookingEditPanel token={session.user.token} bookingId={params.bookid} />
     </main>
