@@ -45,9 +45,9 @@ export default function bookInfo(){
     }
   }
     return(
-        <main>
+        <main className="ml-[6%]">
         {/* <div></div> */}
-        <div className="text-[#434952] font-Montserrat font-bold text-xl m-4" >Hotel Booking</div>
+        <div className="text-[#434952] font-Montserrat font-bold text-3xl my-[4%]" >Hotel Booking</div>
         <div className="text-[#434952] font-Montserrat  text-xl m-4" >Hotel : {hName}</div>
         <div className="text-[#434952] font-Montserrat  text-xl m-4" >
           {
@@ -82,9 +82,9 @@ export default function bookInfo(){
             onDateChange={(value:Dayjs) => {setBookDate(value)}}/>
            
           </div>
-        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[20%]  shadow-lg mx-[1%] my-2 font-bold"
+        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[20%]  shadow-lg mx-[1%] mt-[4%] font-bold mb-[10%]"
          name="Book Vaccine" onClick={makeBooking} >Book Hotel</button>
-        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[25%]  shadow-lg mx-[3%] my-2 font-bold"
+        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[25%]  shadow-lg mx-[3%] mt-[4%] font-bold mb-[10%]"
          name="Your Booking Detail" onClick={(e)=>{e.stopPropagation(); router.push('/mybooking')}}>Your Booking Detail</button>
         </main>
     )

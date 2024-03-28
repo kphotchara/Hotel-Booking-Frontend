@@ -20,8 +20,8 @@ export default async function Booking(){
     
     return(
         <main className="w-[100%] flex-col items-center space-y-5 p-10">
-            <div className="mt-5 mx-5 text-2xl">{profile.data.name}</div>
-            <table className="table-auto border-separate border-spacing-5"><tbody>
+            <div className="text-[#434952] font-Montserrat  text-3xl m-4 font-bold">{profile.data.name}</div>
+            <table className="text-[#434952] font-Montserrat  text-xl m-4 border-separate border-spacing-5"><tbody>
                 <tr>
                     <td>Email</td><td>{profile.data.email}</td>
                 </tr>
