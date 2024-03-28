@@ -14,8 +14,8 @@ export default async function myBooking(){
     const profile = await getUserProfile(session.user.token)
     
     return (
-        <main>
-            <div className="text-3xl text-bold my-10 text-center text-[#434952] font-Montserrat font-bold">Your Hotel Booking</div>
+        <main className="bg-white text-black">
+            <div className="font-Montserrat text-3xl font-medium pt-16 pb-4 text-center">Your Hotel Booking</div>
             <Suspense fallback={<div>Loading...<LinearProgress/></div>}> 
                 <MyBookingPage bookingJson={bookingJson} role={profile.data.role}/>
             </Suspense>

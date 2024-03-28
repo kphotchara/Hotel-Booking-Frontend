@@ -27,7 +27,7 @@ export default function BookingEditPanel({token,bookingId}:{token:string,booking
    
    
     return (
-        <main>
+        <main className="bg-white p-16">
         <div className="text-[#434952] font-Montserrat font-bold text-xl m-4" >Edit Booking</div>
         {/* <div className="text-[#434952] font-Montserrat  text-xl m-4" >Hotel : {hName}</div> */}
         <div className="text-[#434952] font-Montserrat  text-xl m-4" >
@@ -38,7 +38,7 @@ export default function BookingEditPanel({token,bookingId}:{token:string,booking
         </div>
        
         
-        <div className="w-fit space-y-2">
+        <div className="w-fit space-y-2 m-4">
             <DateReserve  
             //  onNameChange={(value:string) => {setName(value)}}
           
@@ -47,8 +47,8 @@ export default function BookingEditPanel({token,bookingId}:{token:string,booking
             onDateChange={(value:Dayjs) => {setBookDate(value)}}/>
            
           </div>
-        <button className="inline rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-[20%]  shadow-lg mx-[1%] my-2 font-bold"
-         name="edit booking" onClick={()=>handleEditBooking(bookingId)} >edit</button>
+        <button className="font-Montserrat inline rounded bg-[#C3CACE] hover:scale-110 transition duration-150 px-3 py-3 m-4 text-[#434952] shadow-lg font-medium"
+         name="edit booking" onClick={()=>handleEditBooking(bookingId)} >edit this booking</button>
          
          {/* onClick={(e)=>{e.stopPropagation(); router.push('/mybooking')}} */}
        

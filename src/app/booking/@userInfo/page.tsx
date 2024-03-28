@@ -18,10 +18,21 @@ export default async function Booking(){
     
     const profile = await getUserProfile(session.user.token)
     
+    const currentHour = new Date().getHours();
+    let greeting;
+
+    if (currentHour >= 5 && currentHour < 12) {
+        greeting = 'Good morning';
+    } else if (currentHour >= 12 && currentHour < 18) {
+        greeting = 'Good afternoon';
+    } else {
+        greeting = 'Good evening';
+    }
+
     return(
-        <main className="w-[100%] flex-col items-center space-y-5 p-10">
-            <div className="text-[#434952] font-Montserrat  text-3xl m-4 font-bold">{profile.data.name}</div>
-            <table className="text-[#434952] font-Montserrat  text-xl m-4 border-separate border-spacing-5"><tbody>
+        <main className="w-[100%] flex-col items-center px-12 text-[#434952] font-Montserrat">
+            <div className="mt-8 mx-5 text-2xl font-bold">{greeting}  {profile.data.name}</div>
+            <table className="table-auto border-separate border-spacing-5"><tbody>
                 <tr>
                     <td>Email</td><td>{profile.data.email}</td>
                 </tr>
