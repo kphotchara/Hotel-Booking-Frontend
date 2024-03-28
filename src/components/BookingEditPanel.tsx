@@ -15,7 +15,7 @@ export default function BookingEditPanel({token,bookingId}:{token:string,booking
             if(bookDate){
                  await editBooking(Id,bookDate.toISOString(),token);
                 alert("Edit your booking successfully !! ");
-                // window.location.href = '/mybooking';
+                window.location.href = '/mybooking';
             }
                
             
