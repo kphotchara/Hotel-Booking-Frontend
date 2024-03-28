@@ -15,7 +15,7 @@ export default async function myBooking(){
     
     return (
         <main>
-            <div className="text-3xl text-bold my-10 text-center">Your Hotel Booking</div>
+            <div className="text-3xl text-bold my-10 text-center text-[#434952] font-Montserrat font-bold">Your Hotel Booking</div>
             <Suspense fallback={<div>Loading...<LinearProgress/></div>}> 
                 <MyBookingPage bookingJson={bookingJson} role={profile.data.role}/>
             </Suspense>

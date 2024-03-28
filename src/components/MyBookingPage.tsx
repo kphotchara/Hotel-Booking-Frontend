@@ -16,8 +16,8 @@ export default async function MyBookingPage({bookingJson,role}:{bookingJson:Prom
             {
                 bookingJsonReady.count==0?
                     <>
-                    <p className="text-base pb-10 flex justify-center text-[#C3CACE] font-Montserrat">You don't have any bookings yet.</p>
-                    <div className="text-base pb-10 flex justify-center hover:text-[#C3CACE] font-Montserrat">
+                    <p className="text-3xl pb-10 flex justify-center text-[#C3CACE] mt-[10%] font-Montserrat">You don't have any bookings yet.</p>
+                    <div className="text-xl pb-10 flex justify-center hover:text-[#C3CACE] font-Montserrat mb-[10%]">
                             <Link href="/hotel" color="inherit">
                                 View Available Hotels Now
                             </Link>

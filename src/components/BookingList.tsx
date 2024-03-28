@@ -41,23 +41,22 @@ export default function BookingList ({bookItem,role}:{bookItem:BookingItem,role:
 
     return(
         <main>
-           
-        <div className="bg-gray-200 rounded space-y-4 rounded-2xl mx-auto px-11 mx-5 py-12 my-10 w-2/5 relative" key={bookItem._id}>
+        <div className="bg-gray-200 rounded space-y-4 rounded-2xl mx-auto px-11 mx-5 py-12 my-10 w-2/5 relative text-[#434952] font-Montserrat" key={bookItem._id}>
             
             {role==="admin"?<div className="text-md ml-4"> User : {bookItem.user.name}</div>:null}
             <div className="text-md ml-4"> Hotel : {bookItem.hotel.name}</div>
             <div className="text-md ml-4"> Booking Date : {dayjs(bookItem.apptDate).format("DD/MM/YYYY")}</div>
-            <button className="block rounded-2xl bg-black hover:bg-indigo-600 px-5 py-2 text-white text-sm shadow-sm absolute right-32 bottom-4"
+            <button className="rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-1/4 h-[6vh] m-[5%] shadow-lg font-bold"
             onClick={(event)=>{event.stopPropagation();router.push(`/mybooking/${bookItem._id}`)}}>
                 edit
             </button>
-            <button className="block rounded-2xl bg-black hover:bg-indigo-600 px-5 py-2 text-white text-sm shadow-sm absolute right-4 bottom-4"
+            <button className="rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] px-3 py-2 text-[#434952] w-1/3 h-[6vh] m-[5%] shadow-lg font-bold"
             onClick={(event)=>{event.stopPropagation();handleRemoveBooking(bookItem._id)}}>
                 Remove
             </button>
          </div>
          <div>
-         <button className="block rounded-2xl bg-black hover:bg-indigo-600 mx-auto px-5 py-3 absolute top-20 right-5 text-white text-sm shadow-sm "
+         <button className="block rounded-3xl bg-[#C3CACE] hover:bg-[#8D9CA4] mx-auto px-[5%] py-[2%] absolute top-20 right-5 text-[#434952] font-bold text-sm shadow-sm "
             onClick={(event)=>{event.stopPropagation();router.push('/hotel')}}>
                 add another booking
             </button>
