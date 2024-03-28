@@ -26,7 +26,7 @@ export default function bookInfo(){
     const {data:session} =useSession();
     
     
-  const makeBooking = () => {
+  const makeBooking = async () => {
     if(hid && hName && bookDate && session) {
       // const item : BookingItem = {
       //   // name: name,
@@ -35,8 +35,10 @@ export default function bookInfo(){
       //   apptDate:dayjs(bookDate).format("YYYY/MM/DD")
       // }
       //dispatch(addBooking(item));
-      addOneBooking(session.user.token,dayjs(bookDate).format("YYYY/MM/DD"),hid)
-      alert("Booking Successfully")
+      const res = await addOneBooking(session.user.token,dayjs(bookDate).format("YYYY/MM/DD"),hid)
+      if(res.success === true)alert("Booking Successfully , Enjoy your holiday!")
+      else alert(res.msg)
+
     }
     else if(!bookDate){
       alert("Please select date")

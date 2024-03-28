@@ -34,10 +34,13 @@ export interface HotelItem {
   export interface BookingItem {
     _id:string,
     apptDate: string,
-    user:string,
+    user:userInBooking,
     hotel:HotelinBooking,
     createdAt:string,
     __v: number
+  }
+  export interface userInBooking{
+    name:string
   }
 
   export interface BookingJson {

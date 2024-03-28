@@ -10,8 +10,8 @@ export default async function addOneBooking(token:string,userApptDate:string,hid
             user:uid
         }),
     })
-    if(!response.ok){
-        throw new Error("failed to add booking") 
-    }
+    // if(!response.ok){
+    //     throw new Error("failed to add booking") 
+    // }
     return await response.json()
 }
