@@ -6,7 +6,7 @@ import dayjs from "dayjs"
 import BookingList from "./BookingList"
 import { Link } from "@mui/material"
 
-export default async function MyBookingPage({bookingJson}:{bookingJson:Promise<BookingJson>}){
+export default async function MyBookingPage({bookingJson,role}:{bookingJson:Promise<BookingJson>,role:string}){
 
     const bookingJsonReady = await bookingJson
     const bookingItems = bookingJsonReady.data
@@ -26,7 +26,7 @@ export default async function MyBookingPage({bookingJson}:{bookingJson:Promise<B
         
                 :
                     bookingItems.map((bookItem:BookingItem)=>(
-                    <div key={bookItem._id}><BookingList bookItem={bookItem}/></div>
+                    <div key={bookItem._id}><BookingList bookItem={bookItem} role={role}/></div>
                     ))
             }
         </>

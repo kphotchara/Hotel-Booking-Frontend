@@ -14,7 +14,7 @@ import { useSearchParams } from "next/navigation"
 import { BookingItem } from "@/interface"
 
 
-export default function BookingList ({bookItem}:{bookItem:BookingItem}) {
+export default function BookingList ({bookItem,role}:{bookItem:BookingItem,role:string}) {
     const urlParams = useSearchParams()
     const bookingItems = useAppSelector ((state)=> state.bookSlice.bookItems)
     const dispatch = useDispatch<AppDispatch>()
@@ -28,6 +28,7 @@ export default function BookingList ({bookItem}:{bookItem:BookingItem}) {
             if (session && session.user && session.user.token) {
                 await deleteBooking(session.user.token, bookingId);
                 alert("Delete your booking successfully !! ");
+                console.log(session.user)
                 window.location.reload();
             } else {
                 alert("Failed to delete your booking");
@@ -38,11 +39,12 @@ export default function BookingList ({bookItem}:{bookItem:BookingItem}) {
         }
     };
 
-    
     return(
         <main>
            
         <div className="bg-gray-200 rounded space-y-4 rounded-2xl mx-auto px-11 mx-5 py-12 my-10 w-2/5 relative" key={bookItem._id}>
+            
+            {role==="admin"?<div className="text-md ml-4"> User : {bookItem.user.name}</div>:null}
             <div className="text-md ml-4"> Hotel : {bookItem.hotel.name}</div>
             <div className="text-md ml-4"> Booking Date : {dayjs(bookItem.apptDate).format("DD/MM/YYYY")}</div>
             <button className="block rounded-2xl bg-black hover:bg-indigo-600 px-5 py-2 text-white text-sm shadow-sm absolute right-32 bottom-4"

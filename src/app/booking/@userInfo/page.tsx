@@ -9,6 +9,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import getUserProfile from "@/libs/getUserProfile";
+import dayjs from "dayjs";
 
 export default async function Booking(){
     const session = await getServerSession(authOptions)
@@ -16,8 +17,7 @@ export default async function Booking(){
     if(!session||!session.user.token)return null
     
     const profile = await getUserProfile(session.user.token)
-    var createdAt = new Date(profile.data.createdAt)
-
+    
     return(
         <main className="w-[100%] flex-col items-center space-y-5 p-10">
             <div className="mt-5 mx-5 text-2xl">{profile.data.name}</div>
@@ -29,7 +29,7 @@ export default async function Booking(){
                     <td>Tel.</td><td>{profile.data.tel}</td>
                 </tr>
                 <tr>
-                    <td>Member Since</td><td>{createdAt.toString()}</td>
+                    <td>Member Since</td><td>{dayjs(profile.data.createdAt).format('MM/DD/YYYY')}</td>
                 </tr>
                 
             </tbody></table>
